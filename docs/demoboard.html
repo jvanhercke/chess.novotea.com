@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demonstration board</title>
+<link rel="stylesheet" href="demoboard.css" type="text/css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="easeljs-0.5.0.min.js"></script>
+
+<script src="channox/namespace.js"></script>
+<script src="channox/settings.js"></script>
+<script src="channox/figure.js"></script>
+<script src="channox/chessset.js"></script>
+<script src="channox/board.js"></script>
+<script src="channox/pieces.js"></script>
+<script src="channox/promotion.js"></script>
+<script src="channox/fen.js"></script>
+<script src="channox/san.js"></script>
+<script src="channox/arrow.js"></script>
+<script src="channox/box.js"></script>
+<script src="channox/direction.js"></script>
+<script src="channox/piece.js"></script>
+<script src="channox/pawn.js"></script>
+<script src="channox/majorpiece.js"></script>
+<script src="channox/move.js"></script>
+<script src="channox/game.js"></script>
+<script src="channox/ply.js"></script>
+<script src="channox/movelist.js"></script>
+<script src="channox/editor.js"></script>
+<script src="channox/pgn.js"></script>
+<script src="channox/fonts/default.js"></script>
+
+<script src="demoboard.js"></script>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name = "viewport" content="user-scalable=no">
+</head>
+
+<body style="position: absolute; width: 100%; height: 100%">
+	<div id="menu" style="height: 100%; float:left;">
+		<div class="middle"></div>
+		<div id="icons">
+			<div class="icon" style="background-image: url(undo.svg)" onclick="back()"></div>
+			<div class="icon" style="background-image: url(rewind.svg)" onclick="rewind()"></div>
+			<div class="icon" style="background-image: url(settings.svg)" onclick="toggle(false)"></div>
+			<div class="icon" style="background-image: url(edit.svg)" onclick="toggle(true)"></div>
+			<div class="icon" style="background-image: url(flip.svg)" onclick="flip()"></div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="panel" style="height: 100%; float: left;">
+			<div id="slider">
+				<div id="editbox">
+					<div style="margin-top: .5em; font-stretch: extra-condensed; color: orange;">edit</div>
+					<div id="pieces"></div>
+					<div class="action" onClick="set(channox.FEN.CLEAR)">clear</div>
+					<div style="margin-bottom: .5em;" class="action" onClick="set(channox.FEN.BEGIN)">begin</div>
+				</div>
+				<div id="settingsbox">
+					<div style="margin-bottom: .5em; margin-top: .5em; font-stretch: extra-condensed; color: orange;">settings</div>
+					<div style="margin-bottom: .5em;" class="action"><input id="legal" type="checkbox" checked><label for="legal"> only legal moves</label></div>
+				</div>
+			</div>
+			<div class="middle"></div>
+		</div>
+		<div style="height: 100%">
+			<div id="board"></div>
+		</div>
+	</div>
+</body>
+
+</html>
